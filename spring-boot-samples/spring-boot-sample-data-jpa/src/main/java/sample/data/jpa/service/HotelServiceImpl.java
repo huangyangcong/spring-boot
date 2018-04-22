@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 the original author or authors.
+ * Copyright 2012-2018 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +83,7 @@ class HotelServiceImpl implements HotelService {
 		private final Map<Rating, Long> ratingCount;
 
 		public ReviewsSummaryImpl(List<RatingCount> ratingCounts) {
-			this.ratingCount = new HashMap<Rating, Long>();
+			this.ratingCount = new HashMap<>();
 			for (RatingCount ratingCount : ratingCounts) {
 				this.ratingCount.put(ratingCount.getRating(), ratingCount.getCount());
 			}
@@ -94,5 +94,7 @@ class HotelServiceImpl implements HotelService {
 			Long count = this.ratingCount.get(rating);
 			return count == null ? 0 : count;
 		}
+
 	}
+
 }

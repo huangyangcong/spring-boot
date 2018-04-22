@@ -22,7 +22,7 @@ import sample.test.WelcomeCommandLineRunner;
 import sample.test.service.VehicleDetails;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -66,7 +66,7 @@ public class UserVehicleControllerApplicationTests {
 	}
 
 	@Test
-	public void welcomeCommandLineRunnerShouldBeAvailable() throws Exception {
+	public void welcomeCommandLineRunnerShouldBeAvailable() {
 		// Since we're a @SpringBootTest all beans should be available.
 		assertThat(this.applicationContext.getBean(WelcomeCommandLineRunner.class))
 				.isNotNull();
